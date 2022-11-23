@@ -83,13 +83,14 @@ function inBounds(board, pos) {
 }
 
 
-function getRandomLocations(board, randLength) {
+function getRandomLocations(board, randLength, exludePos) {
     var locs = []
     var counter = 0
     while (counter < randLength) {
         var i = getRandomIntInclusive(0, board.length - 1)
         var j = getRandomIntInclusive(0, board[i].length - 1)
         const loc = { i, j }
+        if(compareLocations(exludePos,loc)) continue
         if (inBounds(board, loc) && getIndexOfLocations(locs, loc) === -1) {
             locs.push(loc)
             counter++

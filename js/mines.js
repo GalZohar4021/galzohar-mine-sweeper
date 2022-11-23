@@ -1,8 +1,10 @@
 `use strict`
 const MINE = '💣'
+var gMines
 
-function createMines(board) {
-    var locs = getRandomLocations(board, gLevel.MINES)
+function createMines(board, firstPos) {
+    gMines = []
+    var locs = getRandomLocations(board, gLevels[gGame.level].MINES, firstPos)
     for (var i = 0; i < locs.length; i++) {
         createMine(board, locs[i])
     }
@@ -10,11 +12,13 @@ function createMines(board) {
 
 function createMine(board, loc) {
     var mine = {
-        location: loc
+        i: loc.i,
+        j: loc.j
     }
     board[loc.i][loc.j].isMine = true
+    gMines.push(mine)
 }
-function updateNearbyMines(board) {
+function setMinesNegsCount(board) {
     for (var i = 0; i < board.length; i++) {
         for (var j = 0; j < board[i].length; j++) {
             if (board[i][j].isMine) continue

@@ -6,15 +6,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <title>Document</title>
+    <link rel="icon" href="img/favicon.webp">
+    <title>Mine-Sweeper Game!</title>
 </head>
 
 <body onload="onInit()">
-    <div class="board-container">
-
+    <div class="header">
+        <h1>Mine Sweeper</h1>
+        <div class="levels-bar">
+            <button class="menu-levels" onclick="toggleLevelsMenu()">Choose level and start new game</button>
+            <div class="menu">
+                <button onclick="chooseLevel(0)">Level 1</button>
+                <button onclick="chooseLevel(1)">Level 2</button>
+                <button onclick="chooseLevel(2)">Level 3</button>
+                <button onclick="chooseLevel(3)">Level 4</button>
+            </div>
+        </div>
+        <div class="stats-bar">
+            <div class="lives-block">
+                <h2 class="lives">Lives : 
+                    <span class="stats">0</span>
+                </h2>
+            </div>
+            <div class="show-count-block">
+                <h2 class="showed">Flagged : 
+                    <span class="stats">0</span>
+                </h2>
+            </div>
+            <div class="marked-count-block">
+                <h2 class="count-marked">Marked : 
+                    <span class="stats">0</span>
+                </h2>
+            </div>
+            <div class="time-block">
+                <h2 class="time">Game Time : 
+                    <span class="stats">0</span>
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <img onclick="restart()" class="smiley" src="img/smiley-normal.png" alt="New Game"/>
+        <div class="board-container">
+            
+        </div>
+    </div>
+    <div class="footer">
+        <h1>Gal Zohar</h1>
     </div>
     <script src="js/utils.js"></script>
     <script src="js/mines.js"></script>
+    <script src="js/levels.js"></script>
+    <script src="js/records.js"></script>
+    <script src="js/time.js"></script>
+    <script src="js/smiley.js"></script>
     <script src="js/main.js"></script>
 </body>
 
