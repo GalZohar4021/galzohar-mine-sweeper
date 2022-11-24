@@ -16,18 +16,9 @@
         <div class="levels-bar">
             <button class="menu-levels" onclick="toggleLevelsMenu()">Choose level and start new game</button>
             <div class="menu">
-                <button onclick="chooseLevel(0)">Level 1</button>
-                <button onclick="chooseLevel(1)">Level 2</button>
-                <button onclick="chooseLevel(2)">Level 3</button>
-                <button onclick="chooseLevel(3)">Level 4</button>
             </div>
         </div>
         <div class="stats-bar">
-            <div class="lives-block">
-                <h2 class="lives">Lives : 
-                    <span class="stats">0</span>
-                </h2>
-            </div>
             <div class="show-count-block">
                 <h2 class="showed">Flagged : 
                     <span class="stats">0</span>
@@ -46,9 +37,34 @@
         </div>
     </div>
     <div class="content">
-        <img onclick="restart()" class="smiley" src="img/smiley-normal.png" alt="New Game"/>
-        <div class="board-container">
-            
+        
+        <div class="hints">
+            <span>Hints</span>
+            <div class="hints-box">
+                
+            </div>
+        </div>
+        <div class="lives">
+            <span>Lives</span>
+            <div class="lives-box">
+                
+            </div>
+        </div>
+        <div class="btns">
+            <button class="mine-exterminator" onclick="mineExterminator()">Mine Exterminator</button>
+            <button class="mega-hint" onclick="megaHint()">Mega Hint</button>
+            <button class="undo" onclick="undoAction()">UNDO</button>
+            <button class="clicker" onclick="safeClick()">Safe Click</button>
+            (Safe Clicks left: <span>3</span>)<br />
+            <button class="manual-mines" onclick="setManualPlacing(this)">Restart & Place Mines Manual</button>
+            <button class="seven-boom" onclick="restartSevenBoom(this)">7 BOOM</button>
+        </div>
+        <img onclick="restartGame()" class="smiley" src="img/smiley-normal.png" alt="New Game"/>
+        <div class="board-container">     
+        </div>
+        <div class="best-record">
+            <h1>Best Record of Level </h1><span> 1</span>
+            <h2>NO RECORD</h2>
         </div>
     </div>
     <div class="footer">
@@ -60,6 +76,10 @@
     <script src="js/records.js"></script>
     <script src="js/time.js"></script>
     <script src="js/smiley.js"></script>
+    <script src="js/lives.js"></script>
+    <script src="js/hints.js"></script>
+    <script src="js/safeClicks.js"></script>
+    <script src="js/actions.js"></script>
     <script src="js/main.js"></script>
 </body>
 

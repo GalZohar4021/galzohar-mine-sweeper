@@ -1,4 +1,4 @@
-
+'use strict'
 var gTimeInterval
 
 function initTime() {
@@ -21,5 +21,4 @@ function updateTimeBar() {
 function clearTime() {
     clearInterval(gTimeInterval)
     gGame.startTime = 0
-    addRecord(gGame)
 }

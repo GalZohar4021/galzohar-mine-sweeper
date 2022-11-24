@@ -8,8 +8,8 @@ function renderBoard(mat, selector, clickFunc) {
         strHTML += '<tr>'
         for (var j = 0; j < mat[0].length; j++) {
             const className = `cell cell-${i}-${j}`
-            strHTML += `<td class="${className}" onclick="${clickFunc}(${i},${j})" 
-            oncontextmenu="markCell(event,this,${i},${j})">${getSpannedVal(EMPTY)}</td>`
+            strHTML += `<td class="${className}" onclick="${clickFunc}(this,${i},${j})" 
+            oncontextmenu="onClickedRight(event,this,${i},${j})">${getSpannedVal(EMPTY)}</td>`
         }
         strHTML += '</tr>'
     }
@@ -54,7 +54,7 @@ function getCellsByVal(board, val) {
     var cells = []
     for (var i = 0; i < board.length; i++) {
         for (var j = 0; j < board[i].length; j++) {
-            if (board[i][j].type === val) cells.push({ i, j })
+            if (!board[i][j] === val) cells.push({ i, j })
         }
     }
     return cells
@@ -83,7 +83,7 @@ function inBounds(board, pos) {
 }
 
 
-function getRandomLocations(board, randLength, exludePos) {
+function getRandomLocations(board, randLength, exludePos = { i : -1, j : -1}) {
     var locs = []
     var counter = 0
     while (counter < randLength) {

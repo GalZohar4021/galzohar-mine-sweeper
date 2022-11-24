@@ -1,25 +1,26 @@
 .body {
-    width: auto;
+    width: fit-content;
+    height: fit-content;
 }
 
 
 /* ****** HEADER ********* */
 .header {
+    text-align: center;
     height: fit-content;
     width: inherit;
-    background-color: rgb(0, 0, 255, 0.2);
+    background-color: rgba(4, 44, 120, 0.5);
     padding-block: 10px;
 }
 
 .header h1 {
     width: fit-content;
+    margin: 0 auto;
     border-radius: 10%;
     padding-inline: 30px;
-    margin-block-start: 10px;
-    margin-inline-start: 650px;
-    
-    color: cornflowerblue;
-    background-color: rgba(95, 158, 160, 0.2);
+    margin-block: 20px;
+
+    color: rgb(22, 72, 165);
 
     font-size: 100px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -38,7 +39,7 @@
 .menu-levels {
     height: fit-content;
     width: fit-content;
-    
+
     border: 5px inset rgb(25, 50, 91);
     border-radius: 10%;
 
@@ -49,64 +50,50 @@
     font-weight: 500;
     font-size: 30px;
 
-    color: azure;
-    background-color: cadetblue;
+    color: white;
+    background-color: rgba(4, 44, 120, 0.5);
 }
 
-.menu { 
-    display: none;   
+.menu {
+    display: none;
     height: fit-content;
     width: fit-content;
-    
+
     background-color: rgba(150, 207, 188, 0.708);
     border: 4px outset rgb(27, 136, 136);
     border-radius: 5%;
+
+    margin: 0 auto;
+}
+
+.menu button {
+    margin-inline: 1.5px;
+    height: fit-content;
+    width: fit-content;
+
+
+    border: 3px hidden rgb(255, 255, 255);
+
+    font-size: 40px;
+    font-weight: 500;
+
+    padding-block: 5px;
+    padding-inline: 100px;
+
+    color: white;
+    background-color: rgba(4, 44, 120, 0.5);
+}
+
+/*  ------------ menu levels  -----------*/
+
+.stats-bar {
+    height: fit-content;
+    width: fit-content;
 
     padding: 20px;
     margin: 0 auto;
 }
 
-.menu button {
-    margin-inline: 25px;
-    height: fit-content;
-    width: fit-content;
-    
-    border: 5px inset rgb(25, 50, 91);
-    border-radius: 10%;
-
-    font-size: 50px;
-    font-weight: 500;
-
-    padding-block: 5px;
-    padding-inline: 20px;
-    color: azure;
-    background-color: cadetblue;
-}
-/*  ------------ menu levels  -----------*/
-
-.stats-bar {    
-    height: fit-content;
-    width: fit-content;
-
-    padding: 20px;
-    margin-inline-start: 350px;
-}
-
-.lives-block {
-    display: inline-flex;
-    justify-content: center;
-
-    padding: 0px 30px 0px 30px;
-    margin-inline-start: 20px;
-
-    height: fit-content;
-    width: fit-content;
-    
-    border-radius: 10%;
-    background-color: black;
-    color:chartreuse;
-    font-size: 25px;
-}
 .show-count-block {
     display: inline-flex;
     justify-content: center;
@@ -116,12 +103,13 @@
 
     height: fit-content;
     width: fit-content;
-    
+
     border-radius: 10%;
     background-color: black;
-    color:chartreuse;
+    color: chartreuse;
     font-size: 25px;
 }
+
 .marked-count-block {
     display: inline-flex;
     justify-content: center;
@@ -131,12 +119,13 @@
 
     height: fit-content;
     width: fit-content;
-    
+
     border-radius: 10%;
     background-color: black;
-    color:chartreuse;
+    color: chartreuse;
     font-size: 25px;
 }
+
 .time-block {
     display: inline-flex;
     justify-content: center;
@@ -146,31 +135,178 @@
 
     height: fit-content;
     width: fit-content;
-    
+
     border-radius: 10%;
     background-color: black;
-    color:chartreuse;
+    color: chartreuse;
     font-size: 25px;
 }
 
-.stats {    
+.stats {
     display: inline-block;
 }
+
 /* ***************** CONTENT ********************** */
 .content {
-    width: inherit;
-    height: fit-content;
     text-align: center;
     margin-block-start: 50px;
-    
+
     padding-block: 60px;
-    background-color: rgb(0, 0, 255, 0.2);
+    background-color: rgba(4, 44, 120, 0.5);
 }
 
+.best-record {
+    position: inline-block;
+    height: fit-content;
+    width: fit-content;
+    display: block;
+    background-color: rgb(139, 161, 203);
+
+    margin: 0 auto;
+    margin-block-start: 80px;
+
+    font-size: 40px;
+    color: rgb(22, 72, 165);
+    font-style: italic;
+}
+
+.best-record h1 {
+    display: inline;
+}
+.best-record span{
+    font-size: 80px;
+}
+.best-record h2 {
+    color: rgb(8, 34, 82);
+}
+
+
+/* *****  LIVES  ******** */
+.lives {
+    display: inline-flex;
+    margin: 30px;
+}
+
+.hints {
+    display: inline-flex;
+    margin: 30px;
+}
+
+.hints span {
+    padding-inline-end: 10px;
+    font-size: 50px;
+    color: rgb(22, 72, 165);
+}
+
+.lives span {
+    padding-inline-end: 10px;
+    font-size: 50px;
+    color: rgb(22, 72, 165);
+}
+
+.lives-box img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-inline: 10px;
+    border-style: outset;
+}
+
+/* -------- HINTS -------- */
+.hints-box img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-inline: 10px;
+    border-style: outset;
+}
+
+
+
+/* ---------------- SAFE CLICK -------- */
+.btns {
+    margin: 0 auto;
+    margin: 20px;
+
+    font-size: 30px;
+}
+
+.btns span {
+    margin: 0 auto;
+    margin: 5px;
+
+    font-size: 30px;
+}
+
+.clicker {
+    margin: 10px;
+    padding: 10px 40px;
+    border: 5px groove white;
+
+    color: white;
+    background-color: rgba(4, 44, 120, 0.5);
+
+    font-size: 40px;
+}
+
+.undo {
+    margin: 10px;
+    padding: 10px 40px;
+    border: 5px groove white;
+
+    color: white;
+    background-color: rgba(212, 102, 0, 0.9);
+
+    font-size: 40px;
+}
+
+.seven-boom {
+    margin: 10px;
+    padding: 10px 40px;
+    border: 5px groove white;
+
+    color: white;
+    background-color: rgba(57, 233, 8, 0.9);
+
+    font-size: 40px;
+}
+.mega-hint {
+    margin: 10px;
+    padding: 10px 40px;
+    border: 5px groove white;
+
+    color: white;
+    background-color: rgba(216, 9, 33, 0.9);
+
+    font-size: 40px;
+}
+.manual-mines {
+    margin: 10px;
+    padding: 10px 40px;
+    border: 5px groove white;
+
+    color: white;
+    background-color: rgba(68, 20, 145, 0.9);
+
+    font-size: 40px;
+}
+.mine-exterminator {
+    margin: 10px;
+    padding: 10px 40px;
+    border: 5px groove white;
+
+    color: white;
+    background-color: rgba(179, 193, 32, 0.9);
+
+    font-size: 40px;
+}
+
+/* ----------------------------------------*/
 .smiley {
-    padding-block-end: 50px;
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
     width: 100px;
-    
 }
 
 .board-container {
@@ -191,6 +327,9 @@
     border-radius: 15%;
     background-color: rgba(102, 123, 208, 0.35);
 }
+.cell span {
+    display: none;
+}
 
 .marked {
     border: 6px outset rgb(162, 19, 5);
@@ -201,7 +340,14 @@
     background-color: rgba(82, 103, 255, 0.70);
 }
 
+.revealed span{
+    display: inline;
+}
 
+.hint {
+    border-style: inset;
+    background-color: rgba(112, 34, 175, 0.7);
+}
 
 .mine-Nearby {
     color: rgb(234, 13, 1);
@@ -213,9 +359,9 @@
     background-color: rgba(230, 24, 24, 0.70);
 }
 
-span {
-    display: none;
-}
+
+
+
 .footer {
     margin-block-start: 20px;
     height: fit-content;
@@ -225,11 +371,12 @@ span {
     border-radius: 4.0%;
     background-color: rgb(0, 0, 255, 0.2);
 }
+
 .footer h1 {
     text-align: center;
 
     font-size: 50px;
-    color:darkred;
+    color: darkred;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-style: italic;
 }

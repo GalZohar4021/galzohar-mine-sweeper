@@ -1,3 +1,4 @@
+'use strict'
 var gLevels
 var gLevelsMenu = false
 function initLevels() {
@@ -17,8 +18,18 @@ function initLevels() {
         }
         gLevels.push(level)
     }
+    renderMenu()
+}
+function renderMenu() {
+    var btnHTML
+    var elMenu = getDOMElementByClass("menu")
+    for (var i = 0; i < gLevels.length; i++) {
+        btnHTML = `<button onclick="chooseLevel(${i})">Level ${i + 1}</button>`
+        elMenu.innerHTML += btnHTML
+    }
 }
 function chooseLevel(level) {
+    updateRecords(level)
     newGame(level)
 }
 
@@ -27,7 +38,7 @@ function getGameLevel() {
 }
 
 function toggleLevelsMenu() {
-    elMenu = getDOMElementByClass("menu")
+    var elMenu = getDOMElementByClass("menu")
     elMenu.style.display = (gLevelsMenu)?('none'):('flex')
     gLevelsMenu = !gLevelsMenu
 }
