@@ -10,7 +10,7 @@
     <title>Mine-Sweeper Game!</title>
 </head>
 
-<body onload="onInit()">
+<body class="body" onload="onInit()">
     <div class="header">
         <h1>Mine Sweeper</h1>
         <div class="levels-bar">
@@ -39,13 +39,11 @@
     <div class="content">
         
         <div class="hints">
-            <span>Hints</span>
             <div class="hints-box">
                 
             </div>
         </div>
         <div class="lives">
-            <span>Lives</span>
             <div class="lives-box">
                 
             </div>
@@ -53,9 +51,11 @@
         <div class="btns">
             <button class="mine-exterminator" onclick="mineExterminator()">Mine Exterminator</button>
             <button class="mega-hint" onclick="megaHint()">Mega Hint</button>
-            <button class="undo" onclick="undoAction()">UNDO</button>
+            
+            <button class="undo" onclick="undoAction()">UNDO</button> 
             <button class="clicker" onclick="safeClick()">Safe Click</button>
             (Safe Clicks left: <span>3</span>)<br />
+            <button class="darkMode" onclick="toggleDarkMode(this)">Dark Mode</button>
             <button class="manual-mines" onclick="setManualPlacing(this)">Restart & Place Mines Manual</button>
             <button class="seven-boom" onclick="restartSevenBoom(this)">7 BOOM</button>
         </div>
@@ -80,6 +80,7 @@
     <script src="js/hints.js"></script>
     <script src="js/safeClicks.js"></script>
     <script src="js/actions.js"></script>
+    <script src="js/dark.js"></script>
     <script src="js/main.js"></script>
 </body>
 

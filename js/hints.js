@@ -9,12 +9,13 @@ function initHints(game) {
     gMegaHintUsed = false
     gMegaHintCells = []
     clearHints()
+    var strHTML = 'Hints '
     for (var i = 1; i <= game.hints; i++) {
         const className = `hint hint-${i}`
-        const strHTML = `<img onclick="useHint()" class="${className}"
-         src="img/hint.webp"/>\n`
-        renderHintIcon(strHTML)
+        strHTML += `<img onclick="useHint()" class="${className}"
+        src="img/hint.webp"/>\n`
     }
+    renderHintBox(strHTML)
 }
 function megaHint() {
     if (gMegaHintUsed) return
@@ -39,10 +40,8 @@ function megaHintCells(board, cells) {
 }
 
 function clearHints() {
-    var hints = document.querySelectorAll('.hint')
-    for (var i = 0; i < hints.length; i++) {
-        hints[i].remove()
-    }
+    var hints = document.querySelector('.hints-box')
+    hints.innerHTML = ""
 }
 function useHint() {
     if (gGame.hints === 0) return
@@ -60,7 +59,7 @@ function usedHintRender() {
     elHint.remove()
 }
 
-function renderHintIcon(hintHTML) {
+function renderHintBox(hintHTML) {
     var elHintsBox = getDOMElementByClass("hints-box")
     elHintsBox.innerHTML += hintHTML
 }

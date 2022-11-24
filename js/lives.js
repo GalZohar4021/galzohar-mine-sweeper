@@ -1,9 +1,10 @@
 'use strict'
 function initLives(game) {
     clearLives()
+    var strHTML = 'Life'
     for (var i = 1; i <= game.LIVES; i++) {
         const className = `live live-${i}`
-        const strHTML = `<img class="${className}"
+        strHTML += `<img class="${className}"
          src="img/live.jpg"/>\n`
         renderLiveIcon(strHTML)
     }
@@ -15,10 +16,9 @@ function addLive() {
     renderLiveIcon(strHTML)
 }
 function clearLives(){
-    var lives = document.querySelectorAll('.live')
-    for(var i=0; i<lives.length; i++) {
-        lives[i].remove()
-    }
+    var lives = document.querySelector('.lives-box')
+    lives.innerHTML = ""
+
 }
 function renderLiveIcon(liveHTML) {
     var elLivesBox = getDOMElementByClass("lives-box")

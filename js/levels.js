@@ -39,6 +39,6 @@ function getGameLevel() {
 
 function toggleLevelsMenu() {
     var elMenu = getDOMElementByClass("menu")
-    elMenu.style.display = (gLevelsMenu)?('none'):('flex')
+    elMenu.style.display = (gLevelsMenu)?('none'):('inline-flex')
     gLevelsMenu = !gLevelsMenu
 }
