@@ -92,7 +92,7 @@ function firstMove(i, j) {
         else createMines(gBoard, firstPos)
     }
     minesBoardReCheck(gBoard)
-    
+
     printConsoleBoard(gBoard)
     initTime()
 
@@ -112,9 +112,9 @@ function cellClicked(elTd, i, j) {
         if (gMegaHintCells.length < 2) {
             markCell(elTd, i, j)
             gMegaHintCells.push({ i, j })
-            if(gMegaHintCells.length === 2) {
+            if (gMegaHintCells.length === 2) {
                 clearPlacingMarks(gMegaHintCells)
-                megaHintCells(gBoard,gMegaHintCells)
+                megaHintCells(gBoard, gMegaHintCells)
                 gMegaHintState = false
             }
             return
@@ -167,6 +167,7 @@ function markCell(elTd, i, j, safeClickOverride = false) {
 
 // --------------- Reveal & Unreveal of Cell & Model of cell ----------------------
 function flagCell(board, i, j) {
+    if (board[i][j].isMarked) markCell(getDOMElementByPos(i, j), i, j)
     revealCell(board, i, j)
     revealModel(board, i, j)
 }
@@ -317,9 +318,9 @@ function getCellClass(cellData) {
     return newClass
 }
 
-function clearPlacingMarks(locs){
-    for(var i=0; i<locs.length; i++) {
-        const cell = { i: locs[i].i , j : locs[i].j }
+function clearPlacingMarks(locs) {
+    for (var i = 0; i < locs.length; i++) {
+        const cell = { i: locs[i].i, j: locs[i].j }
         markCell(getDOMElementByPos(cell.i, cell.j), cell.i, cell.j)
     }
 }
