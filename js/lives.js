@@ -6,8 +6,8 @@ function initLives(game) {
         const className = `live live-${i}`
         strHTML += `<img class="${className}"
          src="img/live.jpg"/>\n`
-        renderLiveIcon(strHTML)
     }
+    renderLiveIcon(strHTML)
 }
 function addLive() {
     const className = `live live-${gGame.LIVES}`
